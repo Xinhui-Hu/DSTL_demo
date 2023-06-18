@@ -1,0 +1,894 @@
+<!DOCTYPE HTML>
+<!--
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DSTL Demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src="jquery-3.6.4.min.js"></script>
+        
+    <style>
+    .dstl_color{
+        color: #f58634        
+    }
+
+    .dstl_bg{
+        background: #f58634
+    }
+    
+    .subtitle{
+            font-size: 24px; font-weight: bold; position: relative; text-align: center; 
+        }
+
+     .vertical-center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+     .mybtn {
+         background-color: white;
+         text-align: center;
+         display: inline-block;
+         font-size: 15px;
+         cursor: pointer;
+      }
+    .step1{
+        
+        }
+        
+    .second_step{
+        color: black; 
+        font-weight: bold; 
+        padding: 20px; 
+        text-align: justify             
+        }
+        
+    .page_mid{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align:center;
+        }
+
+    .top_center{  
+    position:relative;
+    margin:0 auto;
+    clear:left;
+    height:auto;
+    z-index: 0;
+    text-align:center;/* Add This*/    
+        }
+        
+
+    .step3_row {
+      display: flex;
+    }
+
+    /* Create three equal columns that sits next to each other */
+    .step3_column {
+      flex: 25%;
+      padding: 5px;
+    } 
+        
+     .higher-div {
+      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      height: 100%;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;  /*Center items vertically */
+    }
+
+    .image-grid button {
+      border: none;
+      background: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 200px; /* Adjust the width as needed */
+      height: 200px; /* Adjust the height as needed */
+      position: relative;
+    }
+
+    .image-grid img {
+      max-width: 92%; /* Ensure the image does not exceed the button width */
+      max-height: 92%; /* Ensure the image does not exceed the button height */
+    }
+
+    .image-grid span {
+      margin-top: 10px; /* Adjust the margin as needed */
+      text-align: center;
+      max-width: 92%; /* Ensure the image does not exceed the button width */
+      max-height: 92%; /* Ensure the image does not exceed the button height */
+    }
+
+    /* CSS for the details window */
+    .image-grid .details-window {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .image-grid button:hover .details-window {
+      display: block;
+      font-size: 10pt;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-container button {
+      background-color: #ffffff;
+      border: none;
+      margin: 10px;
+      padding: 0;
+    }
+
+    .button-container button img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .button-container button.lit-up {
+      background-color: #ffffcc;
+    }
+
+    .button-container button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+        
+    .float-parent-element { 
+        width: 50%; 
+    } 
+    .float-child-element { 
+        float: left; 
+        width: 50%; 
+    } 
+    .red { 
+        background-color: red; 
+        margin-left: 50%; 
+        height: 100px; 
+    } 
+    .yellow { 
+        margin-left: 50%; 
+        height: 100px; 
+        background-color: yellow; 
+    }  
+        
+    .outer {
+      display: grid;
+      grid-template: 1fr / 1fr;
+      place-items: center;
+    }
+    .outer > * {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+    }
+    .outer .below {
+      z-index: 1;
+      
+    }
+    .outer .top {
+      z-index: 2;
+      
+    }
+        
+  .step2_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .step2_options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .step2_option {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+  
+  .step2_text {
+    font-size: 18px;
+    color: black; 
+    font-weight: bold; 
+    padding: 10px; 
+    margin-bottom: 0px; /* between paragraphs */
+    text-align: left;
+    overflow:hidden;
+  }
+        
+  .step4_option {
+    width: 210px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+        
+  .step5_container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px; /* Adjust the padding value as per your preference */
+    }
+
+    .box {
+      flex: 1;
+      margin-right: 20px; /* Adjust the margin value as per your preference */
+      background-color: #f1f1f1; /* Example background color */
+      overflow:auto;
+    }
+
+    .box:last-child {
+      margin-right: 0; /* Remove the margin for the last div to prevent extra spacing */
+    }
+        
+    .step5_text{
+      color: black; font-weight: bold; margin-bottom: 10px;    
+    }
+        
+    a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+        
+    #white-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0; /* Initially hidden */
+}
+
+
+
+    </style>
+        
+        
+ <!--Head -->       
+        
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content color0 span-3-75" style="background: #f58634">
+									<h1 class="major">DSTL</h1>
+                                    <h2>Data Storytelling Toolkit for Librarians</h2>
+									<h3>Created with DSTL Core Design Team</h3>
+									<ul class="actions" >
+                                        <li><a href="#step1" class="button dstl_color icon solid fa-angle-right " style="data-inline=true; font-size: 20pt" >Start</a></li>
+									</ul>
+								</div>
+								<div data-position="25% 25%" style="background: #f58634;   border: 15px solid #f58634;" >
+									<img src="images/logo/logo-only-light.png" alt="logo" style = "height: 300px;  text-align: center; position: relative; top: 50%;   -ms-transform: translateY(-50%); transform: translateY(-50%); "   />
+								</div>
+							</section>
+
+						<!-- Section 1: Choose argument -->
+							<section class="panel spotlight medium right" id="step1" >
+								<div style="  border: 15px solid white; " >
+									<h2 class="major" style="color: #f58634; padding: 10px">Step 1: Select your data storytelling argument</h2>
+                                        <ul class="actions stacked" style="position: relative;">
+                                            <li>
+                                                <a href="#step2" > 
+                                                <button id="find_needs" class="button primary color5 step1" value="find_needs"  onclick="getArgument(this.id)" style="font-size: 18px; width=450px"><img src="images/logo/need%20assess.png" height="55" > Understand the real needs of their communities
+                                                </button>
+                                                </a>
+                                            </li>                                         
+                                            <li>
+                                                <a href="#step2" > 
+                                                <button id="meet_needs" class="button primary color5 step1" value="meet_needs" onclick="getArgument(this.id)" style="font-size: 20px;"> <img src="images/logo/meet%20need.png" height="50" width="50">
+                                                 Serve the needs of their communities
+                                                </button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#step2" > 
+                                                 <button id="equal" class="button primary color5 step1" value="equal" onclick="getArgument(this.id)" style="font-size: 18px;"><img src="images/logo/equitable.png" height="50"> 
+                                                Keep up with other libraries
+                                                </button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#step2" >    
+                                                <button id="strength" class="button primary color5 step1" value="strength"  onclick="getArgument(this.id)" style="font-size: 18px;"><img src="images/logo/strength.png" height="55">
+                                                 Build on existing strengths
+                                                </button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#step2" > 
+                                                <button id="deficit" class="button primary color5 step1" value="deficit" onclick="getArgument(this.id)" style="font-size: 18px;"> <img src="images/logo/chain.png" height="50">  
+                                                  Address deficits
+                                                </button>
+                                                </a>
+                                            </li>                                            
+										</ul>
+
+								
+								</div>
+								<div class="image filtered tined" data-position="top center" style="background: white">
+								</div>
+                                
+  
+							</section>
+
+						<!-- Step2: Select motivation -->
+							<section class="panel" id="step2" style="background: #f58634; width: 1350px" >
+								<div class="intro joined" style="width: 400px">
+									<h2 class="major">Step 2: Motivation</h2>
+									<p style="font-size: 24px">What do you want this story to do for you?</p>
+                                    <!--p style="background: white;color: ba">"If you have any other reasons for selecting this argument, please feel free to share them in this <a href='https://forms.gle/UKLWDTEjDvzwjzP26' >form</a> to help us enhance the demonstration.<br>The next step is to identify your target audiences and their attitudes."</p-->
+                                                        
+                                </div>
+                                <div class="step2_container" style="width: 60%">
+                                  <div class="step2_options">
+                                    <div class="step2_option stack">
+                                      
+                                      <span class="dstl_color" style="font-weight: bold"><input type="image" src="images/logo/achievement_narrative.png" name="achievement" class="submit" id="achievement" onclick="getMotivation(this.id)" value="Achievement Narrative" style="width: 100px"/><br>Achievement Narrative</span>
+                                    </div>
+                                    <div class="step2_option">
+                                      <span class="dstl_color" style="font-weight: bold"><input type="image" src="images/logo/benchmarking.png" name="benchmarking" class="submit" id="benchmarking" onclick="getMotivation(this.id)" value="Benchmarking Narrative" style="width: 100px"/><br>Benchmarking Narrative</span>
+                                    </div>
+                                    <div class="step2_option">
+                                      <span class="dstl_color" style="font-weight: bold"><input type="image" src="images/logo/justification.png" name="justification" class="submit" id="justification" onclick="getMotivation(this.id)" value="Justification Narrative" style="width: 100px"/><br>Justification Narrative</span>
+                                    </div>
+                                  </div>
+                                  <div class="step2_text" style="background: white; width: 620px; overflow-y: scroll position: relative">
+                                      <p id="step2_lower_p1" style="padding: 0px; margin: 0px; font-size: 10pt" >Please select your Argument</p>
+                                      <p id="step2_lower_p2"  style="padding: 0px; margin: 0px;font-size: 10pt">Please select your Motivation</p>
+                                      <p id="step2_lower_p3"  style="padding: 0px; margin: 0px;font-size: 10pt"></p>
+                                      
+                                  </div>
+                                </div>
+                                
+                               <div>
+                                   <ul class="actions page_mid" >
+                                       <li><a href="#step3" class=" button primary color1 circle icon solid fa-angle-right" style="margin-right:0px">Next</a><br><span style="color: white; font-weight: bold">Next Section</span></li>
+								   </ul>
+                               </div>
+
+                                <script>
+                                   const step2_p2 ={
+                                        achievement:"<ul class='dstl_color'><li>Ask for funding and other resources to fulfill an identified unmet need</li><li>Explain what is needed and why (library strengths, deficits, or community composition</li></ul>",
+                                        benchmarking:"<ul class='dstl_color'><li>Demonstrate the impact of funding and other resources<br><span style='color:black; font-weight: normal; font-size:10pt;'>&#x2022 Successfully served the identified needs<br>&#x2022 Communicate the impact and justify the works</span></li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:10pt'>&#x2022 Need more support in serving the identified <br> &#x2022 Explain to stakeholders </span></li></ul>",
+                                        justification: "<ul class='dstl_color'><li>Ask for funding and other resources<br><span style='color:black; font-weight: normal; font-size:16px;'>&#x2022 Identify the resources needed to fill the gaps with other libraries</span></li><li>Demonstrate the impact of funding and other resources<span style='color:black; font-weight: normal;font-size:10pt'><br>&#x2022 Demonstrate how well your library has done compared to other libraries </span></li><li>Explain what is needed and why (library strengths, deficits, or community composition<span style='color:black; font-weight: normal;font-size:10pt'><br>&#x2022 Articulate the challenges and difficulties that prevent your library keep up with other libraries </span></li></ul>",
+                                        //strength: "<ul class='dstl_color'><li>Ask for funding and other resources</li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:16px'>&#x2022 Identify the resources needed to further build on the existing strength </span></li></ul>",
+                                        //deficit:"<ul class='dstl_color'><li>Ask for funding and other resources</li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:16px'>&#x2022 Identify the resources needed to effectively address on the encountered deficits </span></li></ul>",                                       
+                                    }
+                                        
+                                    var selectedArgument;
+                                    function getArgument(clicked_id) {
+                                        //space p1
+                                        selectedArgument = document.getElementById(clicked_id).innerHTML;
+                                        document.getElementById("step2_lower_p1").innerHTML = "You have chosen "+'<span class="dstl_color" style="font-weight = bold">'+`${selectedArgument}`+'</span>' + " as your argument.";
+                                        document.getElementById("step5_p1.1").innerHTML = "Argument: " + '<span class="dstl_color">'+ selectedArgument +'</span>';
+                  
+                                        
+                                        return selectedArgument;
+                                    }
+                                    
+                                    function getMotivation(clicked_id) {
+                                        //space p1
+                                        selectedMotivation = document.getElementById(clicked_id).value;
+                                        
+                                        document.getElementById("step2_lower_p2").innerHTML = "You have chosen "+'<span class="dstl_color" style="font-weight = bold">'+selectedMotivation+'</span>' + " as your motivation."
+                                        document.getElementById("step5_p1.2").innerHTML = "Motivation: " + '<span class="dstl_color">'+ selectedMotivation+'</span>';
+                                        document.getElementById("step2_lower_p3").innerHTML = 
+                                               "Based on your fellow librarians' insights, you may want to use data storytelling needs for"+"<br />"+ step2_p2[clicked_id]+'\n'+`<span style='font-weight: normal'>`;
+                                    }
+                                    
+                                    
+                                    
+                                    
+
+                                
+                                </script>
+                            <!--div class="intro joined outer" style="width: 62%; height: 80%; background: white; margin: auto ">
+                                <div class="top" >
+                                    <p class="dstl_color">test</p>
+                                </div>
+                                <div  class="below" >
+                                    <p>test</p>
+                                </div>    
+                            </div-->    
+
+
+                            <!-- onclick return value-->
+                               <!--script> 
+                                  let argument = document.querySelectorAll("button");
+                                    argument.forEach((btn) =>
+                                      btn.addEventListener("click", (e) => {
+                                        let display = document.getElementById("calc");
+                                        display.innerHTML = e.target.innerHTML;
+                                      })
+                                    );
+                               </script-->
+                                
+                                 <!--div class="content span-5 dstl_color" style=" margin: 20px; padding: 10px; width: 820px;">
+                                    <div style=" height:100%" >
+                                        
+                                        <!--p id="step2_content1" class="second_step" style="margin: 0em;" ></p>
+                                        <!--p id="step2_content2" class="second_step" style="margin: 0em" ></p>
+                                        
+                                        <p style="color: black">test</p>	
+                                    
+                                    </div>
+
+                                </div>
+                                
+                               <div>
+                                   <ul class="actions page_mid" >
+                                       <li><a href="#step3" class=" button primary color1 circle icon solid fa-angle-right" style="margin-right:0px">Next</a><br><span style="color: white; font-weight: bold">Next Section</span></li>
+								   </ul>
+                               </div-->
+
+
+                                
+
+                                <!--script>                                  
+                                    const step2_p1 = {
+                                        find_needs:" you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                        meet_needs:"you have invested resources in addressing an identified unmet need in your local community.",
+                                        equal: "you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                        strength: "you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                        deficit:"you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                    }
+                                    const step2_p2 ={
+                                        find_needs:"<ul class='dstl_color'><li>Ask for funding and other resources to fulfill an identified unmet need</li><li>Explain what is needed and why (library strengths, deficits, or community composition</li></ul>",
+                                        meet_needs:"<ul class='dstl_color'><li>Demonstrate the impact of funding and other resources<br><span style='color:black; font-weight: normal; font-size:16px;'>&#x2022 Successfully served the identified needs<br>&#x2022 Communicate the impact and justify the works</span></li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:16px'>&#x2022 Need more support in serving the identified <br> &#x2022 Explain to stakeholders </span></li></ul>",
+                                        equal: "<ul class='dstl_color'><li>Ask for funding and other resources<br><span style='color:black; font-weight: normal; font-size:16px;'>&#x2022 Identify the resources needed to fill the gaps with other libraries</span></li><li>Demonstrate the impact of funding and other resources<span style='color:black; font-weight: normal;font-size:16px'><br>&#x2022 Demonstrate how well your library has done compared to other libraries </span></li><li>Explain what is needed and why (library strengths, deficits, or community composition<span style='color:black; font-weight: normal;font-size:16px'><br>&#x2022 Articulate the challenges and difficulties that prevent your library keep up with other libraries </span></li></ul>",
+                                        strength: "<ul class='dstl_color'><li>Ask for funding and other resources</li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:16px'>&#x2022 Identify the resources needed to further build on the existing strength </span></li></ul>",
+                                        deficit:"<ul class='dstl_color'><li>Ask for funding and other resources</li><li>Explain what is needed and why (library strengths, deficits, or community composition<br><span style='color:black; font-weight: normal;font-size:16px'>&#x2022 Identify the resources needed to effectively address on the encountered deficits </span></li></ul>",                                       
+                                    }
+                                    //&#x2022; dot sign
+                                     var selectedArgument;
+                                     function getItemValue(value) {
+                                        //space p1
+                                          var selectedArgument = document.getElementById(value).innerHTML;
+                                          var contentElement = document.getElementById("step2_content1");
+                                          contentElement.innerHTML = 
+                                              "You have chosen " +' <span style="color: #f58634">'+ selectedArgument + '</span>'+ "as your argument in the previous step, which indicates " + step2_p1[value]+"<br><br>"+ "Based on your fellow librarians' insights, you may want to use data storytelling needs for"+"<br />"+ step2_p2[value]+'\n'+`<span style='font-weight: normal'>`+"If you have any other reasons for selecting this argument, please feel free to share them in this <a href='https://forms.gle/UKLWDTEjDvzwjzP26' class ='dstl_color'>form</a> to help us enhance the demonstration."+`</span>`+"<br>The next step is to identify your target audiences and their attitudes.";
+                                         
+                                         document.getElementById("step5_p1").innerHTML = "You have chosen "+ selectedArgument+ "argument.";
+                                        }
+                                    
+                                    
+                                       
+                                </script-->
+							</section>
+
+                        
+                        
+                        
+						<!-- Section 3: Select Attitude -->
+							<section class="panel" id="step3" style=" background: white; width: 1200px">
+								<div class="top_center " style=" padding: 25px; width: 80%">
+									<h2 class="dstl_color" >Step3: Choose the attitude of your intended audiences</h2>
+                                    <!--Button icons-->
+                                      <div class="higher-div" style="height:150px">
+                                        <div class="image-grid" style="margin-top: 10%;">
+                                          <button id="positive" value="Positive" onclick="getAttitude(this.id)">
+                                            <a href="#step4"><img src="images/logo/positive_orange.png" alt="positive" style="height: 135px;"></a>
+                                            <span class="dstl_color" style="font-size: 18pt">Positive</span>
+                                            <div class="details-window" style="color: black; margin-top: 20px;">
+                                              <p style="overflow: auto; ">The audience is likely to support your argument<br> and agree with your motivation.</p>
+                                            </div>
+                                          </button>
+                                          <button id="negative" value="Negative" onclick="getAttitude(this.id)">
+                                              <a href="#step4"><img src="images/logo/negative_orange.png" alt="negative"  style="height: 135px"></a>
+                                            <span class="dstl_color" style="font-size: 18pt">Negative</span>
+                                            <div class="details-window" style="color: black ; margin-top: 20px">
+                                              
+                                              <p style="overflow: auto; ">The audience is likely to disagree with <br>your argument and your motivation.</p>
+                                            </div>
+                                          </button>
+                                          <button id="mixed" value="Mixed" onclick="getAttitude(this.id)">
+                                              <a href="#step4"><img src="images/logo/mixed_orange.png" alt="mixed" style="height: 135px"></a>
+                                            <span class="dstl_color" style="font-size: 18pt">Mixed</span>
+                                            <div class="details-window" style="color: black ; margin-top: 20px">
+                                             
+                                              <p style="overflow: auto; ">Some of the audience agrees with your argument<br> and motivation but some do not.</p>
+                                            </div>
+                                          </button>
+                                          <button id="polarized" value="Polarized" onclick="getAttitude(this.id)">
+                                              <a href="#step4"><img src="images/logo/polarized_orange.png" alt="polarized" style="height: 135px"></a>
+                                            <span class="dstl_color" style="font-size: 18pt">Polarized</span>
+                                            <div class="details-window" style="color: black ; margin-top: 20px">
+                                              
+                                              <p style="overflow: auto; ">Some of the audience is misinformed and disinforming <br>others, so the audience is strongly divided.</p>
+                                            </div>
+                                          </button>
+                                        </div>
+                                         
+                                                                        
+                                    </div>
+                                     
+                                </div>	
+								                               
+								<script>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    function getAttitude(clicked_id) {
+                                        //space p1
+                                        selectedAttitude = document.getElementById(clicked_id).value;
+                                        document.getElementById("step5_p1.3").innerHTML = "Intended Audience's Attitude: " + '<span class="dstl_color">'+ selectedAttitude + '</span>';
+                                        //space p2
+                                        document.getElementById("step5_p2.1").innerHTML = "The recommended strategy is <span class='dstl_color' style='font-weight = bold;'>Continuity </span>." 
+                                        document.getElementById("step5_p2.2").innerHTML = "Tone: Confident, enthusiastic, excited" 
+                                        document.getElementById("step5_p2.3").innerHTML = "Tactic: Focus on maintaining impact, future impact or possible impact." 
+                                        
+                                        //space p3
+                                        document.getElementById("step5_p3.1").innerHTML = "&#x2022;Comparative data<br><span style='font-size:18px'>&nbsp; &nbsp; &#x2022;(PLS, Benchmark, Project Outcome, state data)</span><br>&#x2022;Local user surveys<br>&#x2022;Evidence of existing strengths" 
+                                        
+                                        
+                                       }
+                                    
+                                  
+                                    
+                                </script>>
+							</section>
+                        
+                        
+                        
+                        <!--Section 4 Data-->
+                        <section class="panel dstl_bg" id="step4" >
+                            <div class="top_center " style=" padding: 15px; width: 80%; width: 1200px;">
+								<h2 style='color: white' >Step4: Narrative Strategy Recommendation</h2>
+                                 <div class="step2_options" style="margin-top: 80px">
+                                        <div class="step4_option stack" style="padding: 20px">
+                                          <a  href="Detail_Page_Discovery.html" style="font-weight: bold; color:white; text-decoration: none;"><input type="image" src="images/logo/discovery.png" name="Discovery" class="submit" id="Discovery" onclick="getMotivation(this.id)" value="Discovery" style="width: 180px"/><span>Discovery</span></a>
+                                        </div>
+                                        <div class="step4_option">
+                                          <a style="font-weight: bold; color:white;" href="Detail_Page_Continuity.html"><input type="image" src="images/logo/continuity_with_bg.png" name="Continuity" class="submit" id="Continuity" onclick="getMotivation(this.id)" value="Continuity" style="width: 180px"/>
+                                          <span id="change_caption">Continuity</span></a>
+                                            
+                                            
+                                        </div>
+                                        <div class="step4_option">
+                                          <a style="font-weight: bold; color:white" href="Detail_Page_Transformation.html"><input type="image" src="images/logo/transformation.png" name="Transformation" class="submit" id="Transformation" onclick="getMotivation(this.id)" value="Transformation" style="width: 180px"/><span>Transformation</span></a>
+                                        </div >  
+                                        
+                                </div>
+                                    <div id="invisible" class="button-container" style="display: none; align-items:center;margin-top: 50px; ">
+                                        <img src="images/logo/up_arrow.png" style="width: 40px; text-align: center">
+                                        
+                                    <p style="color: white;font-weight: bold; margin: auto; font-size: 20pt">Recommended Strategy</p>
+                                
+                                </div>
+                                  
+                             </div>
+                            
+                        
+                            <script>
+                                   
+                                    var previousButton = document.getElementById("polarized");
+                                    var img2 = document.getElementById("Continuity");
+                                    var caption = document.getElementById("change_caption");
+                              //18
+
+                                    previousButton.addEventListener("click", function() {
+                                      // Update the source of the middle image
+                                      img2.src = "images/logo/orange_continuity.png" ;
+
+                                      var T = document.getElementById("invisible");
+                                        T.style.display = "block";
+                                    });
+                                
+
+                                
+                            </script>
+                            
+                           
+                         
+                            
+                            
+                            
+                          <script>
+                            var uploadForm = document.getElementById('uploadForm');
+                            var fileInput = document.getElementById('fileInput');
+                            var uploadStatus = document.getElementById('uploadStatus');
+
+                            uploadForm.addEventListener('submit', function(e) {
+                              e.preventDefault(); // Prevent form submission
+
+                              var file = fileInput.files[0];
+                              if (file) {
+                                var formData = new FormData();
+                                formData.append('file', file);
+
+                                var xhr = new XMLHttpRequest();
+                                xhr.open('POST', 'upload.php', true);
+                                xhr.onreadystatechange = function() {
+                                  if (xhr.readyState === 4 && xhr.status === 300) {
+                                    uploadStatus.textContent = 'File uploaded failed. ';
+                                    // Delay the redirect by 200ms
+
+                                  } else if (xhr.readyState === 4) {
+                                    uploadStatus.textContent = 'File upload successfully.';
+                                    setTimeout(function() {
+                                      window.location.href = '#step5';
+                                    }, 200);
+                                  }
+                                };
+                                xhr.send(formData);
+                              }
+                            });
+                          </script>
+                            
+                        </section>    
+
+                        
+                        <!--Section 5 Strategy-->
+                        
+                        
+                        
+                        
+                        <section class=" " id="step5" style= "  background: white">
+                            <h2 class=" dstl_color" style="padding: 20px; margin-bottom: 0px">Step5: Data Story</h2>
+
+									
+                            <div class=" step5_container " style="padding: 20px; ">
+                                    
+                                <div  class="box" style="padding: 20px; width:650px ">
+                                    <h2 class="major dstl_color" style="margin-bottom: 5px;">Summary</h2>
+                                    <p class = "dstl_color" id="step5_p1.1" style="color: black; font-weight: bold">
+                                        Argument: <span class="dstl_color">Serve the needs of their communities </span> </p>
+                                    <p class = "dstl_color" id="step5_p1.2" style="color: black; font-weight: bold ">
+                                        Motivation: <span class="dstl_color">Benchmarking </span> </p>
+                                    <p class = "dstl_color" id="step5_p1.3" style="color: black; font-weight: bold ">
+                                        Intended Audience's Attitude: <span class="dstl_color">Polarized </span></p>
+                                    <p class = "dstl_color" id="step5_p1.3" style="color: black; font-weight: bold ">
+                                       Narrative Strategy: <span class="dstl_color">Continuity </span></p>
+                                
+                                </div>
+                                <div class="step5_container box" style="min-width: 400px; padding: 20px; background: white">
+                                    <div style="margin: 0px;">
+                                        <h2 class="major dstl_color" style="margin-bottom: 5px;">Data Story</h2>
+                                        <div style="position: relative; height: auto; padding: 10px">
+                                            <p style="color: black">We are seeking and gathering data from ___[our community]___ to show the impact of __[resources/services]__ that contribute to __[goal]__.</p>
+                                        </div>
+                                        <div style="margin-right: 0px">
+                                            <label for="community" style="color: black; ">Please enter <span class="dstl_color">Community</span></label>
+                                            <input type="text" id="community" name="community" style="border-style: dotted; border-color:gray; ">
+                                            <label for="community" style="color: black">Please enter <span class="dstl_color"> Resource/Service</span></label>
+                                            <input type="text" id="community" name="service" style="border-style: dotted; border-color:gray">
+                                            <label for="community" style="color: black">Please enter <span class="dstl_color"> Goal</span></label>
+                                            <input type="text" id="community" name="goal" style="border-style: dotted; border-color:gray">
+                                        </div>
+                                        
+                                    </div>
+                                   
+                                </div>
+                                 <div style="display: flex; margin-left: 0px">
+                                        <div>
+                                        <img src='images/logo/pie_chart.png' alt='Pie chart' style='max-width: 500px'>   
+                                        </div>
+                                        <div>
+                                            <img src='images/logo/groupbar.png' alt='Group Bar chart' style='max-width: 500px'> 
+                                        </div>
+                                    </div>
+                                
+                                <div style="padding: 20px; width:10%">
+                                    <ul class="actions page_mid" >
+                                       <li><a href="https://uiucdstl.wixsite.com/uiucdstl/under-construction" class=" button primary circle icon solid fa-angle-right" style="margin-right:0px;">Next</a><br><span class="dstl_color" style="font-weight: bold">Export<br>(In progress)</span></li>
+								   </ul>
+                                </div>
+                                
+                                
+                                   
+                             
+                                
+                                <!--div style="padding: 20px; width:10%">
+                                    <ul class="actions page_mid" >
+                                       <li><a href="#step6" class=" button primary circle icon solid fa-angle-right" style="margin-right:0px;">Next</a><br><span class="dstl_color" style="font-weight: bold">Next Section</span></li>
+								   </ul>
+                                </div-->
+ 
+                            </div>
+                            
+
+                        </section>
+                        
+                        
+                        
+                        
+                        
+                        <!--Step 6 About-->
+                        
+                        <section class=" dstl_bg" id="step6" style= "margin-bottom: 0; min-width: 800px">
+                            <h2 class="" style="padding: 20px; color: white; margin-bottom: 0; margin-top: 0">Step6: About DSTL</h2>
+                               <div class=" step5_container " style="padding: 20px;  display: flex">
+                                
+                                    
+                                <div  class="intro " style="padding: 20px; display: inline-flex">  
+                                    
+                                    <div class="span-1-5;" style="margin-left: 40px; width: 400px">
+                                        <h2 class="major" style="color: white; ">Contacts</h2>
+										<ul class="contact-icons color1">
+											<li class="icon brands fa-twitter"><a href="https://twitter.com/KateNarrative" style="color: white; font-weight: bold">Prof. McDowell @ Twitter</a></li>
+											<li class="icon brands fa-twitter"><a href="https://twitter.com/uiucdstl" style="color: white; font-weight: bold">DSTL Twitter</a></li>			
+										</ul>
+                                        <div style=" margin: auto; position: relative; font-weight: bold">
+                                        
+                                        <a href="https://uiucdstl.wixsite.com/uiucdstl"><img src="images/logo/QR_code.png" style="width: 180px;"></a></div>
+                                        <p style="color: white; font-weight: bold">Official Website</p>
+									</div>
+                                    
+                                    
+                                    <div class="span-1-5" style="">
+                                    <h2 class="major" style="color: white;">Copyright</h2>
+                                    <p style="font-weight: bold; color: white;">to be added</p>
+
+                                    
+                                    <div class="copyright">&copy; Template Design:<br> <a href="https://html5up.net">HTML5 UP</a>. <a href="https://html5up.net">HTML5 UP</a>. <a href="https://github.com/BlackrockDigital/startbootstrap-creative">Start Bootstrap</a></div>
+                                    <div class="copyright">&copy; UI:<br> <a href="thenounproject.net">TheNounProject(icons)</a>.<br> <a href="https://html5up.net">Canva(figure) </a>.<br><a href="https://clauswilke.com/dataviz">Wilke, C. O. (2019). Fundamentals of data visualization</a></div>
+                                   </div> 
+                                    
+                                    
+                                    
+                                </div>
+                                   
+                                
+                                
+
+
+ 
+                            </div>
+                            
+                            
+                            
+                        </section>
+
+                </div>
+
+        </div>	                                
+
+
+                            
+
+              
+						
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+        
+        
+        
+                                        
+                                <!--script>
+                                                    
+                                    
+                                    var step1_choice = {
+                                        find_needs: {
+                                            p1:"you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                            p2:"Ask for funding and other resources to fulfill an identified unmet need",
+                                            p3:"Explain what is needed and why (library strengths, deficits, or community composition"
+                                                    },
+                                        meet_needs: {
+                                            p1:"you have invested resources in addressing an identified unmet need in your local community.",
+                                            p2:"Ask for funding and other resources to fulfill an identified unmet need",
+                                            p3:"Explain what is needed and why (library strengths, deficits, or community composition"
+                                                    },
+                                        equal: {
+                                            p1:"you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                            p2:"Ask for funding and other resources to fulfill an identified unmet need",
+                                            p3:"Explain what is needed and why (library strengths, deficits, or community composition"
+                                                    },
+                                        strength:{
+                                            p1:"you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                            p2:"Ask for funding and other resources to fulfill an identified unmet need",
+                                            p3:"Explain what is needed and why (library strengths, deficits, or community composition"
+                                                    },
+                                        deficit: {
+                                            p1:"you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                            p2:"Ask for funding and other resources to fulfill an identified unmet need",
+                                            p3:"Explain what is needed and why (library strengths, deficits, or community composition"
+                                                    },
+
+                                    }; 
+                                    
+                                  </script--> 
+                                 <!--script>
+
+
+                                
+                                    const buttons = document.getElementsByTagName("button");
+                                    const step2_p1 = document.getElementById("step2_content1");
+                                    const step2_p2 = document.getElementById("step2_content2");                                    
+
+                                    const buttonPressed = e => { 
+                                      //result.innerHTML = `<strong>You have chosen</strong> <span style="color: #f58634">${e.target.innerHTML}</span> <strong>is ${e.target.id}</strong>`;
+                                      
+                                      step2_p1.innerHTML = `<span style="color: black">You have chosen </span><span style="color: #f58634"> ${e.target.innerHTML} </span> <span style="color: black">as your argument in the previous step, which indicates that you have invested resources in addressing an identified unmet need in your local community.</span>`;
+
+                                    }
+
+                                    for (let button of buttons) {
+                                      button.addEventListener("click", buttonPressed);
+                                    }
+                             
+                                </script-->    
+                                
+                                
+
+                                    <!--script>
+                                        
+                                    
+                                    function func_step1() {
+                                      var value_step1 = document.getElementById("find_needs").value;
+                                      var content_step1 = document.getElementById("find_needs").innerHTML;
+                                      //document.getElementById("demo").innerHTML = content_step1;
+                                      return {
+                                        choice: value_step1, 
+                                        content: content_step1
+                                    };  
+                                  }
+                                    
+                                    var fruitColors = {
+                                     find_needs : "You have chosen " +' <span style="color: #f58634">'+ func_step1().content + '</span>'+ "as your argument in the previous step, which indicates that you have identified problems to solve for your local communities and seek support to fulfill the identified needs.",
+                                     banana : "yellow",
+                                     kiwi : "green",
+                                     plum : "red"
+                                    };
+                                    var plumColor = fruitColors[func_step1().choice];//red
+                                    document.getElementById("step2_content1").innerHTML =  plumColor
+                                        
+                                    
+                                    </script-->
+                
+	</body>
+</html>

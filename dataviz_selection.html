@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Data story</title>
+
+  <!-- Font Awesome Icons -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="css/creative.min.css" rel="stylesheet">
+    
+  <!--Vegalight-->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    
+<style>
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+    }
+     
+.dstl_color{
+        color: #f58634        
+    }
+
+.dstl_bg{
+        background: #f58634
+    }
+ 
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  
+}
+    
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-width: 0.2rem;
+  border-color: #f58634;
+  color: #f58634;
+}
+    
+    .mt-0,
+.my-0 {
+  margin-top: 0 !important;
+}
+
+    .mt-4,
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+    
+.page-section {
+  padding: 8rem 0;
+}
+
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+    
+.justify-content-center {
+  justify-content: center !important;
+}
+ 
+  .col-lg-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+    
+.text-center {
+  text-align: center !important;
+}
+    
+.text-muted {
+  color: #6c757d !important;
+}
+    
+.mb-5,
+.my-5 {
+  margin-bottom: 3rem !important;
+}
+    
+.text-justify {
+  text-align: justify !important;
+}
+    
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+    
+p + ul {
+    margin-top: -20px;
+}
+
+a {
+    color:#6c757d 
+    }
+    
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ align-items: flex-start;  
+}
+    
+
+.hashtags,
+.buttons {
+  width: 50%;
+  overflow-y: auto;
+}
+
+.dashboard {
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 0; /* Remove default margin */
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.upper-left, .lower-left {
+  margin-bottom: 20px;
+}
+
+.hashtags {
+  display: flex;
+  margin: auto;
+  width: 450px;
+  overflow-y: auto;
+  flex-wrap: wrap; /* Allow multiple lines */
+}
+
+.hashtag {
+  
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+  background: white;
+  color: #f58634;
+  border: 0px;
+  text-decoration-color: #f58634;
+  font-size: 16px
+
+}
+
+.image-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.image-button {
+  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.image-button img {
+  max-width: 80%;
+    margin: auto;
+}
+
+.tick-mark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  display: none;
+}
+
+.right-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 800px;
+  overflow: scroll;
+}
+
+button:focus{
+    background:#fde6d6;
+}
+    
+
+</style>
+
+</head>
+    
+    
+
+<body id="page_top">
+    
+<!--Header-->
+<section>    
+<header class="dstl_bg" style=" margin: auto; height: auto">
+  <div>
+    <div>
+    </div>
+    
+      <div id="change_caption" style="padding: 20px; text-align: center; color: white; font-weight: bold; font-size: 28pt">Data Visualization</div> 
+      <br>
+      <img src="images/logo/logo-only-light.png" alt="Logo" class="logo" style="text-align: center; height: 120px">
+       <br>
+       <hr style="border-top: 3px solid; border-radius: 5px; max-width: 14%; color: white"> 
+      <br>
+  </div>
+</header>
+    
+    
+<!--tag-->    
+    
+    <div class="row justify-content-center" id="tactic">
+        <div class="col-lg-8 text-center" >
+         <br><br>
+
+          <!--h2 class="mt-0" >Data Visualization</h2>
+          <hr class="dstl_color" style="border-top: 3px solid; border-radius: 5px; max-width: 12%"-->      
+          <p class="text-muted mb-5  "  >Please select different hashtags and visualization type to show different available data visualization outcomes </p>
+
+           </div>
+    </div>   
+    
+    
+<div class="container" style="height: 800px;" >
+  <div class="left-section" style="width: 50%; height: auto" >
+    <div class="upper-left">
+      <h3 style="text-align: center">Hashtags</h3>
+      <div class="hashtags dstl_color" style= "background:white; position: relative;  " >
+        <button class="hashtag" onclick="getTag(this.id)" id="Administration">#Administration</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Budget">#Budget</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Circulation">#Circulation</button>
+        <!--button class="hashtag" onclick="getTag(this.id)" id="Children">#Children</button--> 
+        <button class="hashtag" onclick="getTag(this.id)" id="Collaboration">#Collaboration</button> 
+        <button class="hashtag" onclick="getTag(this.id)" id="Covid19">#Covid19</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Database">#Database</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Expenditure">#Expenditure</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Income">#Income</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Local community">#Local community</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Non-English Material">#Non-English Material</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Program">#Program</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Public Service">#Public Service</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Registered borrowers">#Registered borrowers</button> 
+        <button class="hashtag" onclick="getTag(this.id)" id="Revenue">#Revenue</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Service hour">#Service hour</button>
+        <button class="hashtag" onclick="getTag(this.id)" id="Visitors">#Visitors</button>  
+         
+
+      
+
+        <!-- Add more hashtags as needed -->
+        
+      </div>
+    </div>
+    <div class="lower-left">
+      <h3 style="text-align: center" >Visualization types</h3>
+      <div  class="image-buttons" style= "position: relative;width: 450px; margin: auto" >
+        <button class="image-button" id="bar" value = "Bar Graph" onclick="getImg(this.id)">
+          <img src="images/logo/bar_icon.png" alt="Button 1" >
+          <span class="tick-mark">Bar graph</span>
+        </button>
+        <button class="image-button" id="stackedbar" value = "Stacked Bar Graph" onclick="getImg(this.id)">
+          <img src="images/logo/stackedbar_icon.png" alt="Button 2">
+          <span class="tick-mark"></span>
+        </button>
+        <button class="image-button" id="groupbar" value = "Group Bar Graph" onclick="getImg(this.id)">
+          <img src="images/logo/groupbar_icon.png" alt="Button 3">
+          <span class="tick-mark"></span>
+        </button>
+        <button class="image-button" id="pie" value = "Pie Graph" onclick="getImg(this.id)">
+          <img src="images/logo/pie_icon.png" alt="Button 4">
+          <span class="tick-mark"></span>
+        </button>
+        <button class="image-button" id="line" value = "Line Graph" onclick="getImg(this.id)">
+          <img src="images/logo/line_icon.png" alt="Button 5">
+          <span class="tick-mark"></span>
+        </button>
+        <button class="image-button" id="smoothline" value = "Smooth Line Graph" onclick="getImg(this.id)">
+          <img src="images/logo/smooth_bar_icon.png" alt="Button 6">
+          <span class="tick-mark"></span>
+        </button>
+        <!-- Add more image buttons as needed -->
+          
+      </div>
+    </div>
+  </div>
+  <div class="right-section" style="width: 600px; border-style: solid ">
+      <p></p>
+    <div class="dashboard" style="border: gray; width: auto;  ">
+      <!-- Content will be dynamically added here -->
+        <div id="content">
+          <p style=" margin-top: 0px">Recommended Data visualizations</p>    
+          <p id="story" style="margin-top: 3px; font-weight: bold;"></p>
+          
+          <!-- Add more content items with appropriate tags -->
+            <p id="image_id" style="margin-top: 3px; font-weight: bold;"></p>
+            <div id="chart1" ></div>
+            <label for="myCheck1" id="checklable1"> </label> 
+            <input type="checkbox" id="myCheck1"  style="display: none">
+            <div id="chart2" ></div>
+            <div id="chart3" ></div>
+            
+            
+        
+    </div>
+  </div>
+</div>
+</div>
+    
+<script>
+    
+
+    
+function getTag(clicked_id){
+    
+    selectedTag = document.getElementById(clicked_id).value;
+    document.getElementById("story").innerHTML="Selected topic: "+ clicked_id ;    
+}
+
+function getImg(clicked_id){
+    var SelectedImage = document.getElementById(clicked_id).value;
+    var chartDiv1 = document.getElementById("chart1");
+    var chartDiv2 = document.getElementById("chart2");
+    var chartDiv3 = document.getElementById("chart3");
+    
+    
+    document.getElementById("image_id").innerHTML =  "Selected graph type: "+ SelectedImage;
+    document.getElementById("myCheck1").checked = false;
+    switch(clicked_id){
+        case "bar": 
+            chartDiv1.innerHTML = "<img src='images/logo/bar_chart.png' alt='Bar chart' style='max-width: 500px'>";
+            document.getElementById("myCheck1").style.display = "block";
+            document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+        case "stackedbar":
+            chartDiv1.innerHTML = "<img src='images/logo/stackedbar.png' alt='Stacked Bar chart' style='max-width: 500px'>";
+            document.getElementById("myCheck1").style.display = "block";
+            document.getElementById("checklable1").innerHTML="Add to final data story";document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+        case "groupbar":
+            chartDiv1.innerHTML = "<img src='images/logo/groupbar.png' alt='Grouped Bar chart' style='max-width: 500px'>";
+            document.getElementById("myCheck1").style.display = "block";
+            document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+            
+        case "pie":
+           chartDiv1.innerHTML = "<img src='images/logo/pie_chart.png' alt='Pie chart' style='max-width: 500px'>";
+           document.getElementById("myCheck1").style.display = "block";
+           document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+        case "line":
+            chartDiv1.innerHTML = "<img src='images/logo/line.png' alt='line chart' style='max-width: 500px'>";
+            document.getElementById("myCheck1").style.display = "block";
+            document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+        case "smoothline":
+            chartDiv1.innerHTML = "<img src='images/logo/smoothline.png' alt='smoorh line chart' style='max-width: 500px'>";
+            document.getElementById("myCheck1").style.display = "block";
+            document.getElementById("checklable1").innerHTML="Add to final data story";
+          break;
+           
+    }
+    
+}
+    
+      
+    
+</script>
+</section>  
+    
+    
+<!--Return to main page--> 
+<section>
+    <div class="container" style="height: 250px" >
+        <div style="margin: auto">
+            <a href="index.html#step5 ">
+                <button class="dstl_bg primary" style="color: white; border: 0px; height: 55px; font-size: 16pt; border-radius: 5px;">Final Data Story</button>
+            </a>
+        
+    
+        </div>
+    </div>
+
+    
+</section>
+    
+    
+
+
+</body>
+ 
+
+    
+</html>
